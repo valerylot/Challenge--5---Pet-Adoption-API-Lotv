@@ -1,0 +1,6 @@
+@Challenge__5___Pet_Adoption_API_Lotv_HostAddress = http://localhost:5070
+
+GET {{Challenge__5___Pet_Adoption_API_Lotv_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
