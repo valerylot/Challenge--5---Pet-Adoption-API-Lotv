@@ -23,7 +23,7 @@ namespace Challenge__5___Pet_Adoption_API_Lotv.Services
         {
             IEnumerable<Pet> result = _db.Pets;
 
-            result = result.Where(g => g.IsDeleted == false);
+            result = result.Where(g => g.IsDeleted == false && g.IsAdopted == false);
 
             return result.ToList();
             
@@ -87,26 +87,27 @@ namespace Challenge__5___Pet_Adoption_API_Lotv.Services
             return existing;
         }
 
-        public List<Pet> IsAdopted()
+        public Pet IsAdopted(int id)
         {
-            IEnumerable<Pet> adopted = _db.Pets;
+            Pet? adopted = _db.Pets.Find(id);
 
-            adopted = adopted.Where(p => p.IsAdopted == false);
+            if(adopted.IsAdopted == false)
+            {
+                adopted.IsAdopted = true;
+            }
 
-            return adopted.ToList();
+            _db.SaveChanges();
+
+            return adopted;
         }
 
-        public Pet IsDeleted(int id, Pet pet)
+        public Pet IsDeleted(int id)
         {
             Pet? deleted = _db.Pets.Find(id);
 
-            if(pet.IsDeleted == false)
+            if(deleted.IsDeleted == false)
             {
-                return null;
-            }
-            if(pet.IsDeleted == true)
-            {
-                deleted.IsDeleted = pet.IsDeleted;
+                deleted.IsDeleted = true;
             }
 
             _db.SaveChanges();

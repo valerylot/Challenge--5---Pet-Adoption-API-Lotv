@@ -145,3 +145,4 @@
 /Users/valerylot/Desktop/CodeStack Combine /Homework/Challenge #5 - Pet Adoption API Lotv/obj/Debug/net10.0/Challenge #5 - Pet Adoption API Lotv.pdb
 /Users/valerylot/Desktop/CodeStack Combine /Homework/Challenge #5 - Pet Adoption API Lotv/obj/Debug/net10.0/Challenge #5 - Pet Adoption API Lotv.genruntimeconfig.cache
 /Users/valerylot/Desktop/CodeStack Combine /Homework/Challenge #5 - Pet Adoption API Lotv/obj/Debug/net10.0/ref/Challenge #5 - Pet Adoption API Lotv.dll
+/Users/valerylot/Desktop/CodeStack Combine /Homework/Challenge #5 - Pet Adoption API Lotv/obj/Debug/net10.0/Challenge #5 - Pet Adoption API Lotv.sourcelink.json

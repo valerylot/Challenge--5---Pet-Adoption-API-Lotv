@@ -62,18 +62,22 @@ namespace Challenge__5___Pet_Adoption_API_Lotv.Controllers
 
         }
 
-        [HttpGet("adopt")]
-        public ActionResult<List<Pet>> IsAdopted()
+        [HttpPatch("adopt/{id}")]
+        public ActionResult<Pet> AdoptPet(int id)
         {
-            List<Pet> adopted = _pet.IsAdopted();
+            Pet adopted = _pet.IsAdopted(id);
 
-            return Ok(adopted);
+            if(adopted == null)
+            {
+                return NotFound($"No pet found with ID {id}");
+            }
+            return NoContent();
         }
 
         [HttpDelete("delete/{id}")]
-        public ActionResult<Pet> DeletePet(int id, Pet pet)
+        public ActionResult<Pet> DeletePet(int id)
         {
-            Pet deleted = _pet.IsDeleted(id, pet);
+            Pet deleted = _pet.IsDeleted(id);
 
             if(deleted == null)
             {
